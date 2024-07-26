@@ -1,11 +1,5 @@
 #!/bin/bash
 
-
-if [ "$(id -u)" != "0" ]; then
-   echo "Ce script doit être exécuté en tant que root" 1>&2
-   exit 1
-fi
-
 echo "Début de l'installation..."
 
 
@@ -69,8 +63,8 @@ reponse=$(echo "$reponse" | tr '[:upper:]' '[:lower:]')
 if [[ $reponse = "o" ]]; then
    echo "Installation du Desktop Gnome"
    echo -n "Installation : ["
+   sudo pacman -Syu gnome
    for i in {1..10}; do
-      sudo pacman -Syu gnome
       echo -n "#" 
    done
    echo "] terminée."
