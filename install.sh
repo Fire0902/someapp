@@ -65,7 +65,7 @@ if [[ $reponse = "o" ]]; then
    echo -n "Installation : ["
    sudo pacman -Syu gnome
    for i in {1..10}; do
-      echo -n "#" 
+      echo -n "#"
    done
    echo "] terminée."
    echo "Installation Gnome terminée."
